@@ -9,6 +9,7 @@
     align-items: center;
     z-index: 90;
     background-color: #fff;
+    cursor: pointer;
 }
 /* ハンバーガーメニュー*/
 .menu-btn span,
@@ -55,10 +56,23 @@
     display: none;
 }
 
+.close-background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    margin-top: 80px;
+    width: 100%;
+    height: 100%;
+    background-color: #520707;
+    opacity: 3.0;
+    cursor: pointer;
+}
+
 /* メニュー部分 */
 .menu-content {
     margin-top: 80px;
-    width: 100%;
+    width: 30%;
     height: 100%;
     position: fixed;
     top: 0;
@@ -68,9 +82,9 @@
 }
 .menu-content ul {
     margin: 0 auto;
-    text-align: center;
-    width: 50%;
+    width: 100%;
     height: 100%;
+    text-align: center;
     padding: 70px 60px 0;
     background-color: #80002b;
 }
@@ -93,9 +107,9 @@
 
 /* マウスホバー時 */
 .menu-content ul li a:hover {
-    color: #520707;
-    border-bottom: dotted 2px #ffffff;;
-    transition: all 0.5s;
+    color: #ff9a9a;
+    border-bottom: dashed 2px #ffffff;;
+    transition: all 0.2s;
 }
 
 /* メニュー横のひし形 */
@@ -139,17 +153,19 @@
 }
 
 /* メニューを画面外へ */
-.menu-content {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
+.menu-content{
     left: 100%;
-    z-index: 80;
-    background-color: #300101;
     transition: all 0.3s;
+}
+.close-background{
+    left: 100%;
+    transition: all 0.3s;
+
 }
 /* メニューを画面内に戻す */
 #menu-btn-check:checked ~ .menu-content {
-    left: 0;
+    left: 30%;
+}
+#menu-btn-check:checked ~ .close-background {
+    left: 0%;
 }
